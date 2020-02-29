@@ -84,7 +84,7 @@ made up of 24 countries meets every two years and its Secretariat is located in 
 
     </div>
 
-    <h4>TOTAL NO. OF HOURS OF DEVELOPMENT ON THIS SITE: apprx 30Hrs</h4>
+    <h4>TOTAL NO. OF HOURS OF DEVELOPMENT ON THIS SITE: apprx 40Hrs</h4>
 
 
 
