@@ -3,12 +3,12 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Bet Admin Dashboard</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/accordion.css">
-    <script src="js/adminhorse.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../css/accordion.css">
+    <script src="../../js/adminhorse.js"></script>
     
 
 
@@ -17,9 +17,9 @@
 <body>
 <?php
 $activemenu="dashboard";
-include('menu.php'); 
+include('../../global/menu.php'); 
 ?>
-<div style="background-image: url('res/images/img11.jpg');">
+<div style="background-image: url('../../res/images/img11.jpg');">
 <div style="margin: 5% 15% 0% 15%;background-color: light-purple; opacity:60% ">
    
 <h2>ADMIN DASHBOARD</h2>

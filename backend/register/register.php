@@ -1,5 +1,5 @@
 <?php 
-include('server.php');
+include('../../global/server.php');
 $MsgErr = "";
 // Now we check if the data was submitted, isset() function will check if the data exists.
 if (isset($_POST['reg_email'], $_POST['reg_pass'])) {
@@ -73,7 +73,7 @@ if (isset($_POST['reg_email'], $_POST['reg_pass'])) {
       var_dump( $stmt2);
         $_SESSION['user_name']= $_POST['reg_username'];
         echo 'You have successfully registered, you can now login!';
-        header("Location: index.php");
+        header("Location: ../../index.php");
     } else {
         // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
         echo 'Could not prepare statement!';

@@ -1,6 +1,6 @@
 
 <li class="nav-item">
-  <a href="admindashboard.php" class="nav-link
+  <a href="../admin/admindashboard.php" class="nav-link
     <?php 
  if ($activemenu=="dashboard")	
    echo "active";

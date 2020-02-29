@@ -1,6 +1,6 @@
 <?php
-include("login_validate.php");
-include("register.php");
+include("../../backend/login/login_validate.php");
+include("../../backend/register/register.php");
 ?>
 <html>
 
@@ -9,13 +9,13 @@ include("register.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-   <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/login.css">
-    <script src="js/loginanimation.js"></script>
-    <script src="js/checkpasswordmatch.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+   <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../css/login.css">
+    <script src="../../js/loginanimation.js"></script>
+    <script src="../../js/checkpasswordmatch.js"></script>
     <script>
         function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -34,7 +34,7 @@ $(document).ready(function() {
 <body>
 <?php
 $activemenu="login";
-include('menu.php');
+include('../../global/menu.php');
 
 ?>
         <div class="login-reg-panel">

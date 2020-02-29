@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //We hashed passwords using   
       //$hashed_password = password_hash($password,PASSWORD_DEFAULT);
         //References http://php.net/manual/en/function.password-verify.php
-        require_once "server.php";
+        require_once "../../global/server.php";
         $sQuery = "SELECT user_id,user_name, password FROM user WHERE email = '$login_email'  ";
         
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $userResults2 = $Result2->fetch(PDO::FETCH_ASSOC);
               if($userResults2['is_admin']){
                 $_SESSION['is_admin'] = true;
-                header("Location: admindashboard.php");
+                header("Location: ../../../frontend/admin/admindashboard.php");
               }
-              header("Location: index.php");
+              header("Location: ../../index.php");
           }
           else{
               $Msg = "Password ERROR: Your credentials seem to be wrong. Try again or make sure you are a registered user!<br>";

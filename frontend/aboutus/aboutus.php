@@ -5,13 +5,13 @@
 
     <title>About Us</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>
     <style>
         body{
-            background-image: url('res/images/img9.jpg');
+            background-image: url('../../res/images/img9.jpg');
              background-repeat: no-repeat;
               background-size: 100% 100%;
         }
@@ -23,9 +23,9 @@
 <body>
 <?php
 $activemenu="aboutus";
-include('menu.php'); 
+include('../../global/menu.php'); 
 ?>
-<div class="jumbotron text-center" style="background-image: url('res/images/img9.jpg');">
+<div class="jumbotron text-center" style="background-image: url('../../res/images/img9.jpg');">
   <h1>About Us</h1>
 </div>
 <div class="bg-light" style="margin-top:-50px;">
@@ -60,7 +60,7 @@ made up of 24 countries meets every two years and its Secretariat is located in 
 
     <div class="col-sm-3">
         <div class="card card-block">
-            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"  src="res/images/akhilesh.jpg"
+            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"  src="../../res/images/akhilesh.jpg"
                 data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
             <div class="card-block">
                 <h4 class="card-title">Akhilesh Boodhun</h4>
@@ -72,7 +72,7 @@ made up of 24 countries meets every two years and its Secretariat is located in 
 
     <div class="col-sm-3">
         <div class="card card-block">
-            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="res/images/mohall.jpg"
+            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="../../res/images/mohall.jpg"
                 data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
             <div class="card-block">
                 <h4 class="card-title">Yogeshdass Mohall</h4>

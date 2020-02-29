@@ -1,5 +1,5 @@
 <?php 
-include('server.php');
+include('../../global/server.php');
 
 if ($stmt = $conn->prepare('SELECT user_id, user_name, password FROM user WHERE email = ? ')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"

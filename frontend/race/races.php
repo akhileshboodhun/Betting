@@ -5,16 +5,16 @@
 
     <title>Races</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/accordion.css">
-    <script src="js/accordion.js"></script>
-    <link rel="stylesheet" href="css/betbuttons.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../css/accordion.css">
+    <script src="../../js/accordion.js"></script>
+    <link rel="stylesheet" href="../../css/betbuttons.css">
     <style>
         body{
-            background-image: url('res/images/img1.jpeg');
+            background-image: url('../../res/images/img1.jpeg');
              background-repeat: no-repeat;
               background-size: 100% 100%;
         }
@@ -29,7 +29,7 @@
 <body >
 <?php
 $activemenu="races";
-include('menu.php'); 
+include('../../global/menu.php'); 
 ?>
 
     <div class="jumbotron">
