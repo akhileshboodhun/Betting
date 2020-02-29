@@ -33,7 +33,7 @@
 <body>    
 <?php
 $activemenu="home";
-include('menu.php'); 
+  include('menu.php'); 
 ?>
 
 
