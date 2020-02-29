@@ -17,7 +17,7 @@
       top: 250px;
     
     color: white;
-    font: url("Mukta.css");
+    font: url("css/Mukta.css");
     font-size: 25px;
     background-color:black;
     opacity:0.6;
