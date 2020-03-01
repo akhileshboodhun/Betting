@@ -1,5 +1,5 @@
 # Betting
-## [Front-End Directory](https://www.github.com/akhileshboodhun/Betting/tree/Aks/frontend)
+## [Front-End Directory](#frontend)
 contains each individual webpages along with their sub-pages/assets.
 ## [Back-End Directory](https://www.github.com/akhileshboodhun/Betting/tree/Aks/frontend)
 contains only PHP files that have only PHP and MySQL Codes.
