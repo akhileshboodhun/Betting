@@ -1,4 +1,5 @@
 # Betting
+>![Horse Image](/res/images/img10.jpg)
 ## [Front-End Directory](/frontend)
 contains each individual webpages along with their sub-pages/assets.
 ## [Back-End Directory](/backend)
