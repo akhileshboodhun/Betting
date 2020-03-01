@@ -12,18 +12,6 @@
     <link rel="stylesheet" href="../../css/accordion.css">
     <script src="../../js/accordion.js"></script>
     <link rel="stylesheet" href="../../css/betbuttons.css">
-    <style>
-        body{
-            background-image: url('../../res/images/img1.jpeg');
-             background-repeat: no-repeat;
-              background-size: 100% 100%;
-        }
-        img {
-    height: 150px;
-    width: 100%;
-}
-        
-    </style>
 </head>
 
 <body >
