@@ -1,9 +1,11 @@
 .btn {
     color: white;
-    background-color: purple;
+    background-color: firebrick;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
     color: black;
-    background-color: green;
+    background-color: olive;
+    transition: 0.3s ease;
 }
