@@ -22,10 +22,10 @@ include('../../global/menu.php');
    
    <div class="jumbotron">
         <h1>Admin Dashboard</h1>
-        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle Side Menu</small></button>
-
+       <!--<button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle Side Menu</small></button>
+-->
     </div>
-    <div class="container" stlye="margin-top: -50%" >
+    <div class="sidebar-container" style="width: 100%; margin: 0px 0px 0px 0px; padding:0px 0px" >
         <?php include('dashboardsidemenu.php');?>
         
     </div>
