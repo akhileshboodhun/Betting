@@ -1,3 +1,4 @@
+
 <div class="row">
                     
                     <div class="col-md-8 col-xs-12">
@@ -21,12 +22,23 @@
                                 <div class="form-group">
                                     <label class="col-sm-12">Stable </label>
                                     <div class="col-sm-12">
-                                        <select name="stable_name" class="form-control form-control-line">
+                                        <select name="stable_id" class="form-control form-control-line">
+                                        <?php  
+                                            $list = $conn->prepare("select * from stable order by stable_id asc");
+                                            $list->execute();
+                                            while ($row_list = $list->fetch(PDO::FETCH_ASSOC));
+                                              
+                                        ?> 
+                                        <option value="<? echo $row_list['stable_id']; ?>">  
+                                         <?php echo $row_list['stable_name'];?>  
+                                        </option> 
+
                                             <option>Stable 1</option>
                                             <option>Stable 2</option>
                                             <option>Stable 3</option>
                                             <option>Stable 4</option>
                                             <option>Stable 5</option>
+
                                         </select>
                                     </div>
                                 </div>
