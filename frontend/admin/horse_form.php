@@ -9,7 +9,7 @@
                                         <input type="text" placeholder="Kishan" name="horse_name" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
-                                    <class="col-md-12">Horse Date of Birth</class=>
+                                    <label class="col-md-12">Horse Date of Birth</label>
                                     <div class="col-md-12">
                                     <input type="date" name="horse_dob" placeholder="Date Of Birth" ></div>
                                 </div>

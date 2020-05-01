@@ -9,7 +9,7 @@
                                         <input type="text" placeholder="Silicon Valley" name="race_name" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
-                                    <class="col-md-12">Date</class=>
+                                    <label class="col-md-12">Date</label>
                                     <div class="col-md-12">
                                     <input type="date" name="race_date" placeholder="Date" ></div>
                                 </div>
