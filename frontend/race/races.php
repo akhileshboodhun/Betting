@@ -323,7 +323,7 @@ include('../../global/menu.php');
 
                     <?php 
                         $racename="Race";
-                        $racedetails="Blablabla";
+                        $racedate="19/03/2020";
                         for($i=1;$i<=10;$i++){
                             include('race_cards.php');
                             include('race_modals.php');
