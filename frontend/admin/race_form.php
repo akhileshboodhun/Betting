@@ -6,22 +6,22 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Race Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Silicon Valley" class="form-control form-control-line"> </div>
+                                        <input type="text" placeholder="Silicon Valley" name="race_name" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Date</label>
+                                    <class="col-md-12">Date</class=>
                                     <div class="col-md-12">
-                                    <input type="date" placeholder="Date" ></div>
+                                    <input type="date" name="race_date" placeholder="Date" ></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Distance (in Meters)</label>
                                     <div class="col-md-12">
-                                    <input type="text" placeholder="1000" class="form-control form-control-line"> </div>
+                                    <input type="text" placeholder="1000" name="race_dist" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-12">No. of Horses </label>
                                     <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
+                                        <select name="numofhorse_race" class="form-control form-control-line">
                                             <option> 1</option>
                                             <option> 2</option>
                                             <option> 3</option>

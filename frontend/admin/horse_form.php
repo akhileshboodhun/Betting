@@ -6,22 +6,22 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Kishan" class="form-control form-control-line"> </div>
+                                        <input type="text" placeholder="Kishan" name="horse_name" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Horse Date of Birth</label>
+                                    <class="col-md-12">Horse Date of Birth</class=>
                                     <div class="col-md-12">
-                                    <input type="date" placeholder="Date Of Birth" ></div>
+                                    <input type="date" name="horse_dob" placeholder="Date Of Birth" ></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Weight</label>
                                     <div class="col-md-12">
-                                    <input type="text" placeholder="500" class="form-control form-control-line"> </div>
+                                    <input type="text" placeholder="500" name="horse_weight" class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-12">Stable </label>
                                     <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
+                                        <select name="stable_name" class="form-control form-control-line">
                                             <option>Stable 1</option>
                                             <option>Stable 2</option>
                                             <option>Stable 3</option>
