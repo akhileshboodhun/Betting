@@ -18,22 +18,6 @@
                                     <label class="col-md-12">Horse Weight</label>
                                     <div class="col-md-12">
                                         <input type="number" min="200" max="1000" step="10" placeholder="500" name="horse_weight" class="form-control form-control-line"> </div>
-                                        <div class="input-group  ">
-                                            <div class="input-group-prepend">
-                                                <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary" type="button">
-                                                    <strong>-</strong>
-                                                </button>
-                                            </div>
-                                            <input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder="">
-                                            <div class="input-group-append">
-                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button">
-                                                    <strong>+</strong>
-                                                </button>
-                                            </div>
-                                        </div>
-                                
-                                
-                                
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-12">Stable </label>
