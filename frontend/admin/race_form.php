@@ -23,7 +23,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-12">Horse</label>
                                             <div class="col-sm-12">
-                                                <select name="no_horses[]"  class="resetfield form-control form-control-line">
+                                                <select name="select_horses[]"  class="resetfield form-control form-control-line">
                                                 <option value="">Select Horse</option>
                                                     <?php  
                                                         $list = $conn->prepare("select * from horse order by horse_id asc");
