@@ -3,11 +3,11 @@
                     
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material race-add-form" action="../../backend/admin/addjockey.php"  method="POST">
+                            <form class="form-horizontal form-material jockey-add-form" action="../../backend/admin/addjockey.php"  method="POST">
                                 <div class="form-group">
                                     <label class="col-md-12">Jockey Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Silicon Valley" name="jockey_name"  class="resetfield form-control form-control-line"> </div>
+                                        <input type="text" placeholder="Kanigan" name="jockey_name"  class="resetfield form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">DOB</label>
