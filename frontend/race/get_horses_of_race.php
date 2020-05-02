@@ -12,10 +12,7 @@
                     <tbody>
                     <?php 
 include ('../../global/serverconnectionafterlogin.php');
-     $stmt = $conn->prepare("SELECT h.horse_id, h.horse_name, h.horse_dob, s.stable_name, d.odds
-                             FROM horse h JOIN horse_race d JOIN race r JOIN stable s
-                             WHERE r.race_id = $raceid AND d.horse_id = h.horse_id AND h.stable_id = s.stable_id AND r.race_id = d.race_id
-                             
+     $stmt = $conn->prepare("SELECT * FROM vw_specific_race_info WHERE race_id = $raceid
                             ");
                                         $stmt->execute();
                                         while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
