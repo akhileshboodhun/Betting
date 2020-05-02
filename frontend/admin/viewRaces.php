@@ -141,7 +141,7 @@
                         <div class="white-box">
                             <h3 class="box-title">View All Races in DB</h3>
                             <p class="text-muted ">Select Date 
-                                <select  name="stable_id" class="form-control form-control-line">
+                                <select  name="racedatetime" class="form-control form-control-line">
                                         <option value="">Select Date</option>
                                         <?php  
                                             $list = $conn->prepare("select date_time from race order by date_time asc");
@@ -165,48 +165,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Prohaska</td>
-                                            <td>@Genelia</td>
-                                            <td>admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Deshmukh</td>
-                                            <td>Gaylord</td>
-                                            <td>@Ritesh</td>
-                                            <td>member</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Sanghani</td>
-                                            <td>Gusikowski</td>
-                                            <td>@Govinda</td>
-                                            <td>developer</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Roshan</td>
-                                            <td>Rogahn</td>
-                                            <td>@Hritik</td>
-                                            <td>supporter</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Joshi</td>
-                                            <td>Hickle</td>
-                                            <td>@Maruti</td>
-                                            <td>member</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Nigam</td>
-                                            <td>Eichmann</td>
-                                            <td>@Sonu</td>
-                                            <td>supporter</td>
-                                        </tr>
+                                    <?php 
+                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name
+                                                                FROM horse h LEFT JOIN stable s
+                                                                ON h.stable_id = s.stable_id
+                                                             ');
+                                        $stmt->execute();
+                                        while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                            echo "<tr>
+                                                    <td>" . $row_stmt['horse_id'] . "</td>
+                                                    <td>" . $row_stmt['horse_name'] . "</td>
+                                                    <td>" . $row_stmt['horse_dob'] . "</td>
+                                                    <td>" . $row_stmt['horse_weight'] . "</td>
+                                                    <td>" . $row_stmt['stable_name'] . "</td>
+                                                    
+                                                    </tr>
+                                                    ";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

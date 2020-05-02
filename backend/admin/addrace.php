@@ -1,16 +1,15 @@
 <?php 
 include('../../global/serverconnectionafterlogin.php');
 
-    // Username doesnt exists, insert new account
-    if ($stmt = $conn->prepare('INSERT INTO race (race_name, race_datetime, race_dist, race_numhorses) VALUES (:racename, :racedatetime, :racedist, :racenumhorses)')) {
-        $stmt->bindParam(':racename', $_POST['race_name']);
-        $stmt->bindParam(':racedatetime', $_POST['race_datetime']);
-        $stmt->bindParam(':racedist', $_POST['race_dist']);
-        $stmt->bindParam(':racenumhorses', $_POST['race_numhorses']);
+    if ($stmt = $conn->prepare('INSERT INTO race (race_name, date_time, distance, no_horses) VALUES(:racename, :racedatetime, :dist, :numhorses)')){
+        $stmt->bindParam(':racename', $POST_['race_name']);
+        $stmt->bindParam(':racedatetime', $POST_['date_time']);
+        $stmt->bindParam(':dist', $POST_['distance']);
+        $stmt->bindParam(':numhorses', $POST_['no_horses']);
         $stmt->execute();
-        echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
-    } else {
-        // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
+        echo 'Success';
+        //echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
+    }else{
         echo 'Could not prepare statement!';
     }
 

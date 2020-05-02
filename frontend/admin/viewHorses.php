@@ -1,3 +1,5 @@
+<?php include('../../global/serverconnectionafterlogin.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,14 +123,14 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Basic Table</h4> </div>
+                        <h4 class="page-title">View All Horses in database</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade to Pro
 
                         </a>
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Basic Table</li>
+                            <li class="active">View All Horses in database</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -137,62 +139,41 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">View All Horses in database</h3>
-                            <p class="text-muted"> <code>.table</code></p>
+                            <h3 class="box-title">Total: </h3>
+                            <!-- <p class="text-muted"> <code>.table</code></p>-->
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
+                                            <th>#ID</th>
+                                            <th>Horse Name</th>
+                                            <th>Date of Birth</th>
+                                            <th>Horse Weight</th>
+                                            <th>Stable</th>
+                                            <th>Owner</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Prohaska</td>
-                                            <td>@Genelia</td>
-                                            <td>admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Deshmukh</td>
-                                            <td>Gaylord</td>
-                                            <td>@Ritesh</td>
-                                            <td>member</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Sanghani</td>
-                                            <td>Gusikowski</td>
-                                            <td>@Govinda</td>
-                                            <td>developer</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Roshan</td>
-                                            <td>Rogahn</td>
-                                            <td>@Hritik</td>
-                                            <td>supporter</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Joshi</td>
-                                            <td>Hickle</td>
-                                            <td>@Maruti</td>
-                                            <td>member</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Nigam</td>
-                                            <td>Eichmann</td>
-                                            <td>@Sonu</td>
-                                            <td>supporter</td>
-                                        </tr>
+                                        <?php 
+                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name
+                                                                FROM horse h LEFT JOIN stable s
+                                                                ON h.stable_id = s.stable_id
+                                                             ');
+                                        $stmt->execute();
+                                        while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                            echo "<tr>
+                                                    <td>" . $row_stmt['horse_id'] . "</td>
+                                                    <td>" . $row_stmt['horse_name'] . "</td>
+                                                    <td>" . $row_stmt['horse_dob'] . "</td>
+                                                    <td>" . $row_stmt['horse_weight'] . "</td>
+                                                    <td>" . $row_stmt['stable_name'] . "</td>
+                                                    
+                                                    </tr>
+                                                    ";
+                                        }
+                                        ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>

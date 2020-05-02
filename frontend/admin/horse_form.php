@@ -34,6 +34,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-sm-12">Owner </label>
+                                    <div class="col-sm-12">
+                                        <select  name="owner_id" class="form-control form-control-line">
+                                        <option value="">Select Stable</option>
+                                        <?php  
+                                            $list = $conn->prepare("select * from owner order by owner_name asc");
+                                            $list->execute();
+                                            while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
+                                    echo "<option value=\"" . $row_list['owner_id'] ."\">"  . $row_list['owner_name'] . "</option>" ;
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <div class="col-sm-12">
                                         <input type="submit" class="horse-add-btn btn btn-success" value="Add Horse to database">
                                     </div>
