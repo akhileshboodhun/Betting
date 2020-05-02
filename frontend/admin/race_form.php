@@ -7,31 +7,34 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Race Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Silicon Valley" name="race_name" class="form-control form-control-line"> </div>
+                                        <input type="text" placeholder="Silicon Valley" name="race_name"  class="resetfield form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Date</label>
                                     <div class="col-md-12">
-                                    <input type="date" name="date_time" placeholder="Date" ></div>
+                                    <input type="date" name="date_time" class="resetfield" placeholder="Date" ></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Distance (in Meters)</label>
                                     <div class="col-md-12">
-                                    <input type="text" placeholder="1000" name="distance" class="form-control form-control-line"> </div>
+                                    <input type="text" placeholder="1000" name="distance"  class="resetfield form-control form-control-line"> </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-12">No. of Horses </label>
-                                    <div class="col-sm-12">
-                                        <select name="no_horses" class="form-control form-control-line">
-                                            <option value="4"> 4</option>
-                                            <option value="5"> 5</option>
-                                            <option value="6"> 6</option>
-                                            <option value="7"> 7</option>
-                                            <option value="8"> 8</option>
-                                            <option value="9"> 9</option>
-                                            <option value="10"> 10</option>
-                                        </select>
-                                    </div>
+                                <div class="field_wrapper">
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Horse</label>
+                                            <div class="col-sm-12">
+                                                <select name="no_horses[]"  class="resetfield form-control form-control-line">
+                                                <option value="">Select Horse</option>
+                                                    <?php  
+                                                        $list = $conn->prepare("select * from horse order by horse_id asc");
+                                                        $list->execute();
+                                                        while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
+                                                            echo "<option value=\"" . $row_list['horse_id'] ."\">"  . $row_list['horse_name'] . "</option>" ;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="add_button fa fa-plus-square" title="Add field"></a>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">

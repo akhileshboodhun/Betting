@@ -17,7 +17,7 @@ $(document).ready(function() {
             url         : backend_url, // the url where we want to POST
             data        : formData, // our data object
             dataType    : 'json', // what type of data do we expect back from the server
-                        encode          : true
+            encode          : true
         })
             // using the done promise callback
             .done(function(data) {
@@ -29,6 +29,11 @@ $(document).ready(function() {
 
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
+        $($form).closest(".modal:visible").modal('toggle');
+        $(".resetfield").val("");
+        for(var i=0;i<10;i++){
+            $(".remove_button").click(); 
+        }
     });
 
 });

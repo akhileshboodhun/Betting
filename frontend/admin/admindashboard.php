@@ -305,6 +305,7 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
+            <span id="dummy"></span>
             <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by wrappixel.com </footer>
         </div>
         <!-- ============================================================== -->
@@ -340,6 +341,7 @@
     <script src="../../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
     <script src="../../js/add_universal_form.js"></script>
     <script src="../../js/number_spinner.js"></script>
+    <script src="../../js/dynamic_textfields.js"></script>
 </body>
 
 </html>
