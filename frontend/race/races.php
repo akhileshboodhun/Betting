@@ -18,6 +18,7 @@
 <?php
 $activemenu="races";
 include('../../global/menu.php'); 
+include ('../../global/serverconnectionafterlogin.php');
 ?>
 
     <div class="jumbotron">
@@ -36,18 +37,23 @@ include('../../global/menu.php');
                 <div class="row">
 
                     <?php 
-                        $racename="Race";
-                        $racedate="19/03/2020";
-                        for($i=1;$i<=10;$i++){
+                        $stmt = $conn->prepare("SELECT * FROM race");
+                        $stmt->execute();
+                         $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                         foreach($row_stmt as $rs){
+                            $raceid= $rs['race_id'];
+                            $racename=$rs['race_name'];
+                            $racedate=$rs['date_time'];
                             include('race_cards.php');
-                            include('race_modals.php');
-                        }
-                    ?>
+                           include('race_modals.php');
+                         }
+
+
+
+                    ?> 
             
                 </div>
             </div>
-        <script>accordion();</script>  
+         
 
 </body>
-
-
