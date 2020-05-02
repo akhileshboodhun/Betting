@@ -161,7 +161,7 @@
                         <div class="white-box analytics-info">
                         <div class="add_horse">
                         <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal2"></a>
-                        <?php include('add_horse_modal.php'); ?>
+                       <?php include('add_horse_modal.php'); ?>
                         </div>
                             <h3 class="box-title">Total Horses</h3>
                             <ul class="list-inline two-part">
