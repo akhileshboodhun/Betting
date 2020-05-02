@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 01, 2020 at 01:06 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.8
+-- Host: 127.0.0.1
+-- Generation Time: May 02, 2020 at 12:45 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Betting`
+-- Database: `betting`
 --
 
 -- --------------------------------------------------------
@@ -57,13 +57,6 @@ CREATE TABLE `bets` (
   `bet_amount` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `bets`
---
-
-INSERT INTO `bets` (`bet_id`, `race_id`, `horse_id`, `userid`, `bet_odd`, `bet_amount`) VALUES
-(324, 645, 867, 155, 1.76, 400);
-
 -- --------------------------------------------------------
 
 --
@@ -83,8 +76,10 @@ CREATE TABLE `horse` (
 --
 
 INSERT INTO `horse` (`horse_id`, `horse_name`, `horse_dob`, `horse_weight`, `stable_id`) VALUES
-(845, 'lola', '1999-04-26', 78, 213),
-(867, 'bonjour baby', '1997-02-18', 58.7, 213);
+(1, 'Bonjour Baby', '2016-01-01', 550, 2222),
+(2, 'Black Indy', '2016-05-02', 550, 1111),
+(3, 'Senatla', '2019-07-19', 456, 3333),
+(4, 'Zeus Star', '2018-05-09', 651, 4444);
 
 -- --------------------------------------------------------
 
@@ -97,13 +92,6 @@ CREATE TABLE `horse_owner` (
   `horse_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `horse_owner`
---
-
-INSERT INTO `horse_owner` (`owner_id`, `horse_id`) VALUES
-(566, 845);
-
 -- --------------------------------------------------------
 
 --
@@ -114,13 +102,6 @@ CREATE TABLE `horse_race` (
   `race_id` int(11) NOT NULL,
   `horse_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `horse_race`
---
-
-INSERT INTO `horse_race` (`race_id`, `horse_id`) VALUES
-(645, 867);
 
 -- --------------------------------------------------------
 
@@ -164,7 +145,9 @@ INSERT INTO `normal_user` (`user_id`, `user_dob`, `balance`) VALUES
 (179, '2020-02-28', 0),
 (180, '2020-03-24', 0),
 (181, '2020-03-26', 0),
-(182, '2020-03-19', 0);
+(182, '2020-03-19', 0),
+(183, '1999-10-16', 0),
+(184, '2020-05-13', 0);
 
 -- --------------------------------------------------------
 
@@ -197,13 +180,6 @@ CREATE TABLE `race` (
   `distance` int(11) NOT NULL,
   `no_horses` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `race`
---
-
-INSERT INTO `race` (`race_id`, `race_name`, `date_time`, `distance`, `no_horses`) VALUES
-(645, 'mamalepep', '2020-02-27', 3000, 4);
 
 -- --------------------------------------------------------
 
@@ -239,13 +215,6 @@ CREATE TABLE `race_jockey` (
   `race_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `race_jockey`
---
-
-INSERT INTO `race_jockey` (`jockey_id`, `race_id`) VALUES
-(794, 645);
-
 -- --------------------------------------------------------
 
 --
@@ -274,7 +243,10 @@ CREATE TABLE `stable` (
 --
 
 INSERT INTO `stable` (`stable_id`, `stable_name`) VALUES
-(213, 'Verdun');
+(1111, 'Wild Horses Ranch'),
+(2222, 'Majestic Ranch'),
+(3333, 'Green Forest Stables'),
+(4444, 'Horse Paradise');
 
 -- --------------------------------------------------------
 
@@ -333,7 +305,9 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`) VALUES
 (179, 'keshavpln', 'keshavpln@gmail.com', '$2y$10$ofeK5ylTnYOfQOIdn64wN.GoU8SMLEkx5ogffD4hlbx8cHenaNLTa'),
 (180, 'vbnm', 'vbnm@gmail.com', '$2y$10$0slnlqME6859tvtSOyAXd.zyNpWgf78iOaqC7oITtgHFrde6IunfC'),
 (181, 'xyz', 'xyz@gmail.com', '$2y$10$yI2/ed24AoEQg9YkgVYMN.kdqbKnfFF/BHrqySqyzd.W3AzFpKnBa'),
-(182, 'erty', 'erty@gmail.com', '$2y$10$/kOMgMU7uNaLsugjZAJGROhArayq15sCHCoQDqmshYdZ7VhB2PRuS');
+(182, 'erty', 'erty@gmail.com', '$2y$10$/kOMgMU7uNaLsugjZAJGROhArayq15sCHCoQDqmshYdZ7VhB2PRuS'),
+(183, 'john rambo', 'johnrambo@cia.us', '$2y$10$pDPfLMNRFDb7SvBrI60qsOLldcdun9AudDlNjkm7GRTUDs/Dj2Or6'),
+(184, 'reeshalpedal', 'reeshalsuckscock@brazzers.com', '$2y$10$EhJFtfWBMX0x74w983U32eb7eabn10ZKb9/OtPtTYPBphkSuNDm3y');
 
 -- --------------------------------------------------------
 
@@ -419,7 +393,9 @@ ALTER TABLE `race_jockey`
 -- Indexes for table `race_temp`
 --
 ALTER TABLE `race_temp`
-  ADD PRIMARY KEY (`race_id`,`horse_id`,`jockey_id`);
+  ADD PRIMARY KEY (`race_id`,`horse_id`,`jockey_id`),
+  ADD KEY `horse_id` (`horse_id`),
+  ADD KEY `jockey_id` (`jockey_id`);
 
 --
 -- Indexes for table `stable`
@@ -451,10 +427,34 @@ ALTER TABLE `bets`
   MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
 
 --
+-- AUTO_INCREMENT for table `horse`
+--
+ALTER TABLE `horse`
+  MODIFY `horse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `jockey`
+--
+ALTER TABLE `jockey`
+  MODIFY `jockey_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=795;
+
+--
+-- AUTO_INCREMENT for table `race`
+--
+ALTER TABLE `race`
+  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=796524;
+
+--
+-- AUTO_INCREMENT for table `stable`
+--
+ALTER TABLE `stable`
+  MODIFY `stable_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4445;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- Constraints for dumped tables
@@ -470,9 +470,9 @@ ALTER TABLE `admin`
 -- Constraints for table `bets`
 --
 ALTER TABLE `bets`
-  ADD CONSTRAINT `bets_ibfk_1` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bets_ibfk_2` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bets_ibfk_3` FOREIGN KEY (`userid`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `bets_ibfk_3` FOREIGN KEY (`userid`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bets_ibfk_4` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bets_ibfk_5` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `horse`
@@ -484,15 +484,15 @@ ALTER TABLE `horse`
 -- Constraints for table `horse_owner`
 --
 ALTER TABLE `horse_owner`
-  ADD CONSTRAINT `horse_owner_ibfk_1` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `horse_owner_ibfk_2` FOREIGN KEY (`owner_id`) REFERENCES `owner` (`owner_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `horse_owner_ibfk_2` FOREIGN KEY (`owner_id`) REFERENCES `owner` (`owner_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `horse_owner_ibfk_3` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `horse_race`
 --
 ALTER TABLE `horse_race`
-  ADD CONSTRAINT `horse_race_ibfk_1` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `horse_race_ibfk_2` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `horse_race_ibfk_2` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `horse_race_ibfk_3` FOREIGN KEY (`race_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `normal_user`
@@ -504,8 +504,16 @@ ALTER TABLE `normal_user`
 -- Constraints for table `race_jockey`
 --
 ALTER TABLE `race_jockey`
-  ADD CONSTRAINT `race_jockey_ibfk_1` FOREIGN KEY (`jockey_id`) REFERENCES `jockey` (`jockey_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `race_jockey_ibfk_2` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `race_jockey_ibfk_2` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `race_jockey_ibfk_3` FOREIGN KEY (`jockey_id`) REFERENCES `jockey` (`jockey_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `race_temp`
+--
+ALTER TABLE `race_temp`
+  ADD CONSTRAINT `race_temp_ibfk_1` FOREIGN KEY (`horse_id`) REFERENCES `horse` (`horse_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `race_temp_ibfk_4` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `race_temp_ibfk_5` FOREIGN KEY (`jockey_id`) REFERENCES `jockey` (`jockey_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `transactions`
