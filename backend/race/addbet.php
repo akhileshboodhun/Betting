@@ -1,16 +1,15 @@
 <?php 
 include('../../global/serverconnectionafterlogin.php');
-
+    
+    $usrid=155;
     // Username doesnt exists, insert new account
-    if ($stmt = $conn->prepare('INSERT INTO horse (horse_name, horse_dob, horse_weight, stable_id) VALUES (:horsename, :horsedob, :horseweight,:stableid);')) {
-        $stmt->bindParam(':horsename', $_POST['horse_name']);
-        $stmt->bindParam(':horsedob', $_POST['horse_dob']);
-        $stmt->bindParam(':horseweight', $_POST['horse_weight']);
-        $stmt->bindParam(':stableid', $_POST['stable_id']);
-        //$stmt->bindParam(':ownerid', $_POST['owner_id']);
+    if ($stmt = $conn->prepare('INSERT INTO bets (race_id, horse_id, user_id, bet_odd, bet_amount) VALUES (:raceid, :horseid, :userid,:betodd,:betamount);')) {
+        $stmt->bindParam(':raceid', $_POST['race_id']);
+        $stmt->bindParam(':horseid', $_POST['horse_id']);
+        $stmt->bindParam(':userid', $usrid);
+        $stmt->bindParam(':betodd', $_POST['bet_odd']);
+        $stmt->bindParam(':betamount', $_POST['bet_amount']);
         $stmt->execute();
-        //(SELECT horse_id FROM horse WHERE horse_name = :horsename ;)
-        //INSERT INTO horse_owner (horse_id, owner_id) VALUES (:PDO::lastInserID(), :ownerid);
          echo 'Success';                      
         //echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
     } else {

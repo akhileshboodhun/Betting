@@ -1,12 +1,13 @@
+<form action="../../backend/race/addbet.php" >
 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                        <th scope="col">Horse No.</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Horse</th>
                         <th scope="col">Jockey</th>
                         <th scope="col">Stable</th>
                         <th scope="col">Odds</th>
-                        <th scope="col">Bet</th>
+                        <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,13 +23,15 @@ include ('../../global/serverconnectionafterlogin.php');
                                                     <td>" . $row_stmt['horse_dob'] . "</td>
                                                     <td>" . $row_stmt['stable_name'] . "</td>
                                                     <td>" . $row_stmt['odds'] . "</td>
-                                                    <td><button class=\"btn\">BET</button> </td>
+                                                    <td><button type=\"submit\" class=\"btn\">BET</button> </td>
                                                     </tr>
                                                     ";
                                         }
                                         ?>
                     </tbody>
-                </table>
+</table>
+
+</form>
 
 
 
