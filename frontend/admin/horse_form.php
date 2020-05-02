@@ -1,4 +1,4 @@
-<?php include('../../global/server.php'); ?>
+<?php include('../../global/serverconnectionafterlogin.php'); ?>
 <div class="row">
                     
                     <div class="col-md-8 col-xs-12">
