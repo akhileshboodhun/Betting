@@ -1,10 +1,9 @@
 <?php include('../../global/server.php'); ?>
-<script src="../../js/addrace.js"></script>
 <div class="row">
                     
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form class="form-horizontal form-material horse-add-form" action="../../backend/admin/addhorse.php"  method="POST">
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Name</label>
                                     <div class="col-md-12">
@@ -36,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="horse-add-btn btn btn-success">Add Horse to database</button>
+                                        <input type="submit" class="horse-add-btn btn btn-success" value="Add Horse to database">
                                     </div>
                                 </div>
                             </form>
