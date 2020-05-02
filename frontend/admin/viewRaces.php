@@ -15,7 +15,7 @@
                         </a>
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Basic Table</li>
+                            <li class="active">View All Races in DB</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">View All Races in DB</h3>
+                            <h3 class="box-title">Total:</h3>
                             <p class="text-muted ">Select Date 
                                 <select  name="racedatetime" class="form-control form-control-line">
                                         <option value="">Select Date</option>
@@ -42,34 +42,39 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
+                                            <th>Race Name</>
+                                            <th>Distance</th>
+                                            <th>No of Horses</th>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
+                                            <th>*</th>
+                                            <th>£</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name
-                                                                FROM horse h LEFT JOIN stable s
-                                                                ON h.stable_id = s.stable_id
+                                        $stmt = $conn->prepare('SELECT race_name, distance, no_horses
+                                                                FROM race 
                                                              ');
                                         $stmt->execute();
                                         while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
                                             echo "<tr>
-                                                    <td>" . $row_stmt['horse_id'] . "</td>
-                                                    <td>" . $row_stmt['horse_name'] . "</td>
-                                                    <td>" . $row_stmt['horse_dob'] . "</td>
-                                                    <td>" . $row_stmt['horse_weight'] . "</td>
-                                                    <td>" . $row_stmt['stable_name'] . "</td>
-                                                    
+                                                    <td>" . $row_stmt['race_name'] . "</td>
+                                                    <td>" . $row_stmt['distance'] . "</td>
+                                                    <td>" . $row_stmt['no_horses'] . "</td>
+                                                    <td><button class=\"btn\" data-toggle=\"modal\" data-target=\"#modal1\">View Details</button> </td>
+                                                    <td><button class=\"btn\">edit</button> </td>
+                                                    <td><button class=\"btn\">del</button> </td>
+                                                   
                                                     </tr>
                                                     ";
                                         }
                                         ?>
                                     </tbody>
                                 </table>
+                                <div class="add_race">ADD RACE
+                                    <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal1"></a>
+                                    <?php include('add_race_modal.php'); ?>
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -94,6 +99,7 @@
     <script src="../../js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../../js/custom.min.js"></script>
+    <script src="../../js/add_universal_form.js"></script>
 </body>
 
 </html>
