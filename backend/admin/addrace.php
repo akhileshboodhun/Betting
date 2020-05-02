@@ -7,8 +7,8 @@ include('../../global/serverconnectionafterlogin.php');
         $stmt->bindParam(':dist', $_POST['distance']);
         $stmt->bindParam(':numhorses', $_POST['no_horses']);
         $stmt->execute();
-       // echo 'Success';
-        echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
+        echo 'Success';
+       // echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
     }else{
         echo 'Could not prepare statement!';
     }

@@ -11,8 +11,8 @@ include('../../global/serverconnectionafterlogin.php');
         $stmt->execute();
         //(SELECT horse_id FROM horse WHERE horse_name = :horsename ;)
         //INSERT INTO horse_owner (horse_id, owner_id) VALUES (:PDO::lastInserID(), :ownerid);
-                                
-        echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
+         echo 'Success';                      
+        //echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
     } else {
         // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
         echo 'Could not prepare statement!';
