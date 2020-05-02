@@ -3,7 +3,7 @@
                     
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form class="form-horizontal form-material race-add-form" action="../../backend/admin/addrace.php"  method="POST">
                                 <div class="form-group">
                                     <label class="col-md-12">Race Name</label>
                                     <div class="col-md-12">
@@ -23,20 +23,19 @@
                                     <label class="col-sm-12">No. of Horses </label>
                                     <div class="col-sm-12">
                                         <select name="numofhorse_race" class="form-control form-control-line">
-                                            <option> 1</option>
-                                            <option> 2</option>
-                                            <option> 3</option>
-                                            <option> 4</option>
-                                            <option> 5</option>
-                                            <option> 6</option>
-                                            <option> 7</option>
-                                            <option> 8</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                            <option value="6"> 6</option>
+                                            <option value="7"> 7</option>
+                                            <option value="8"> 8</option>
+                                            <option value="9"> 9</option>
+                                            <option value="10"> 10</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Add Race to database</button>
+                                    <input type="submit" class="race-add-btn btn btn-success" value="Add Race to database">
                                     </div>
                                 </div>
                             </form>

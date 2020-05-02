@@ -99,7 +99,10 @@
                         <a href="basic-table.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>
                     </li>
                     <li>
-                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>Icons</a>
+                        <a href="viewHorses.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>View All Horses</a>
+                    </li>
+                    <li>
+                        <a href="viewRaces.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>View All Races</a>
                     </li>
                     <li>
                         <a href="map-google.html" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>Google Map</a>
