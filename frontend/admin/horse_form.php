@@ -1,4 +1,5 @@
 <?php include('../../global/server.php'); ?>
+<script src="../../js/addrace.js"></script>
 <div class="row">
                     
                     <div class="col-md-8 col-xs-12">
