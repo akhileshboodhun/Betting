@@ -62,6 +62,10 @@
                                         
                                     </tbody>
                                 </table>
+                                <div class="add_horse">ADD Horse
+                                    <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal2"></a>
+                                    <?php include('add_horse_modal.php'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
