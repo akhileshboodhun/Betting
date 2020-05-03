@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 11:45 PM
+-- Generation Time: May 04, 2020 at 12:37 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -201,9 +201,9 @@ CREATE TABLE `race_horse_jockey` (
 --
 
 INSERT INTO `race_horse_jockey` (`race_id`, `horse_id`, `jockey_id`, `odds`) VALUES
-(796540, 107, 796, NULL),
-(796540, 108, 796, NULL),
-(796540, 109, 796, NULL);
+(796540, 107, 796, 1),
+(796540, 108, 796, 1),
+(796540, 109, 796, 1);
 
 -- --------------------------------------------------------
 
