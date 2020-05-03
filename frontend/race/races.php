@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Races</title>
 
@@ -14,42 +14,46 @@
     <link rel="stylesheet" href="../../css/betbuttons.css">
 </head>
 
-<body >
-<?php
-$activemenu="races";
-include('../../global/menu.php'); 
-include('../../global/serverconnectionafterlogin.php');
-?>
+<body>
+    <?php
+    $activemenu = "races";
+    include('../../global/menu.php');
+    include('../../global/serverconnectionafterlogin.php');
+    ?>
+    <div class="container">
+        <video autoplay muted loop id="myVideo">
+            <source src="../../res/videos/horse.m4v" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="jumbotron">
+            <h1>Races</h1>
+            <p></p>
 
-    <div class="jumbotron">
-        <h1>Races</h1>
-        <p></p>
-            
-        </p>
-    </div>
-    <div style="margin-left:15%; margin-right:15%;">             
+            </p>
+        </div>
+        <div >
             <div class="container mt-2">
                 <div class="row">
-                    <?php 
-                        $stmt = $conn->prepare("SELECT * FROM race");
-                        $stmt->execute();
-                         $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                         foreach($row_stmt as $rs){
-                            $raceid= $rs['race_id'];
-                            $racename=$rs['race_name'];
-                            $racedate=$rs['date_time'];
-                            include('race_cards.php');
-                            include('race_modals.php');
-                         }
+                    <?php
+                    $stmt = $conn->prepare("SELECT * FROM race");
+                    $stmt->execute();
+                    $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($row_stmt as $rs) {
+                        $raceid = $rs['race_id'];
+                        $racename = $rs['race_name'];
+                        $racedate = $rs['date_time'];
+                        include('race_cards.php');
+                        include('race_modals.php');
+                    }
 
 
 
-                    ?> 
-            
+                    ?>
+
                 </div>
             </div>
-         
-<script src="../../js/jquery.bootstrap-touchspin.js"></script>
-<script src="../../js/touchspin_apply.js"></script>
-<script src="../../js/add_universal_form.js"></script>
+
+            <script src="../../js/jquery.bootstrap-touchspin.js"></script>
+            <script src="../../js/touchspin_apply.js"></script>
+            <script src="../../js/add_universal_form.js"></script>
 </body>
