@@ -89,9 +89,9 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                        <div class="add_user"><a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal3"></a>
-                        <?php include('add_user_modal.php'); ?></div>
-                            <h3 class="box-title">Total Users</h3>
+                        <div class="add_result"><a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modalAddResult"></a>
+                        <?php include('add_result_modal.php'); ?></div>
+                            <h3 class="box-title">Results</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash3"></div>
