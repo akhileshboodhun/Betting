@@ -61,7 +61,7 @@
                                                     <td>" . $row_stmt['race_name'] . "</td>
                                                     <td>" . $row_stmt['distance'] . "</td>
                                                     <td>" . $row_stmt['no_horses'] . "</td>
-                                                    <td><button class=\"btn\" data-toggle=\"modal\" data-target=\"#modal\">View Details</button> </td>
+                                                    <td><button class=\"btn\" data-toggle=\"modal\" data-target=\"#modalRaceDetail\">View Details</button> </td>
                                                     <td><button class=\"btn\">edit</button> </td>
                                                     <td><button class=\"btn\">del</button> </td>
                                                    

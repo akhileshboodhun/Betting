@@ -41,11 +41,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php 
-                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name
-                                                                FROM horse h LEFT JOIN stable s
-                                                                ON h.stable_id = s.stable_id
-                                                             ');
+                                    <?php 
+                                    $stmt = $conn->prepare("SELECT * FROM vw_all_horses_admin");
                                         $stmt->execute();
                                         while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
                                             echo "<tr>
@@ -54,10 +51,9 @@
                                                     <td>" . $row_stmt['horse_dob'] . "</td>
                                                     <td>" . $row_stmt['horse_weight'] . "</td>
                                                     <td>" . $row_stmt['stable_name'] . "</td>
-                                                    
-                                                    </tr>
-                                                    ";
-                                        }
+                                                    <td>" . $row_stmt['owner_name'] . "</td>
+                                                </tr>";
+                                        };
                                         ?>
                                         
                                     </tbody>

@@ -22,11 +22,14 @@ $horse_array_size = count($select_horse_array);
     //echo $raceid;
     
 
-
+    $testjockeyid=796;
+    $testodd=200;
     foreach($select_horse_array as $s_horse){
-        if ($stmt = $conn->prepare('INSERT INTO horse_race (race_id, horse_id) VALUES(:raceid, :horseid)')){
+        if ($stmt = $conn->prepare('INSERT INTO race_horse_jockey (race_id, horse_id, jockey_id, odd) VALUES(:raceid, :horseid, :jockeyid, :odd)')){
             $stmt->bindParam(':raceid', $raceid);
             $stmt->bindParam(':horseid', $s_horse);
+            $stmt->bindParam(':jockeyid', $testjockeyid);
+            $stmt->bindParam(':odd', $testodd);
             $stmt->execute();
             echo 'Success2';
         // echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
