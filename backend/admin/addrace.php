@@ -24,7 +24,7 @@ $horse_array_size = count($select_horse_array);
 
 
     foreach($select_horse_array as $s_horse){
-        if ($stmt = $conn->prepare('INSERT INTO horse_race (race_id, horse_id) VALUES(:raceid, :horseid)')){
+        if ($stmt = $conn->prepare('INSERT INTO race_horse_jockey (race_id, horse_id) VALUES(:raceid, :horseid)')){
             $stmt->bindParam(':raceid', $raceid);
             $stmt->bindParam(':horseid', $s_horse);
             $stmt->execute();

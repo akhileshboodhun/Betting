@@ -42,9 +42,11 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name
-                                                                FROM horse h LEFT JOIN stable s
+                                        $stmt = $conn->prepare('SELECT h.horse_id, h.horse_name, h.horse_dob, h.horse_weight, s.stable_name, o.owner_name
+                                                                FROM horse h LEFT JOIN stable s  JOIN horse_owner w  JOIN owner o
                                                                 ON h.stable_id = s.stable_id
+                                                                ON h.horse_id = w.horse_id
+                                                                ON o.owner_id = w.owner_id
                                                              ');
                                         $stmt->execute();
                                         while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
