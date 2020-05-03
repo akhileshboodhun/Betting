@@ -27,15 +27,9 @@ include('../../global/serverconnectionafterlogin.php');
             
         </p>
     </div>
-
-
-    <div style="margin-left:15%; margin-right:15%;">
-        
-            
+    <div style="margin-left:15%; margin-right:15%;">             
             <div class="container mt-2">
-
                 <div class="row">
-
                     <?php 
                         $stmt = $conn->prepare("SELECT * FROM race");
                         $stmt->execute();
