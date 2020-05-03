@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 11:25 PM
+-- Generation Time: May 03, 2020 at 11:45 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -186,15 +186,6 @@ INSERT INTO `race` (`race_id`, `race_name`, `date_time`, `distance`, `no_horses`
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `racedetails`
--- (See below for the actual view)
---
-CREATE TABLE `racedetails` (
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `race_horse_jockey`
 --
 
@@ -202,7 +193,7 @@ CREATE TABLE `race_horse_jockey` (
   `race_id` int(11) NOT NULL,
   `horse_id` int(11) NOT NULL,
   `jockey_id` int(11) NOT NULL,
-  `odds` double DEFAULT NULL
+  `odds` double DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -301,15 +292,6 @@ CREATE TABLE `vw_specific_race_info` (
 ,`odds` double
 ,`race_id` int(11)
 );
-
--- --------------------------------------------------------
-
---
--- Structure for view `racedetails`
---
-DROP TABLE IF EXISTS `racedetails`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `racedetails`  AS  select `race_jockey`.`jockey_id` AS `jockey_id`,`horse_race`.`horse_id` AS `horse_id`,`race`.`race_id` AS `race_id`,`race`.`race_name` AS `race_name`,`race`.`date_time` AS `date_time`,`race`.`distance` AS `distance`,`race`.`no_horses` AS `no_horses`,`horse`.`horse_name` AS `horse_name`,`horse`.`horse_dob` AS `horse_dob`,`horse`.`horse_weight` AS `horse_weight`,`horse`.`stable_id` AS `stable_id`,`jockey`.`jockey_name` AS `jockey_name`,`jockey`.`jockey_dob` AS `jockey_dob`,`jockey`.`jockey_weight` AS `jockey_weight` from ((((`race` join `horse_race` on(`race`.`race_id` = `horse_race`.`race_id`)) join `race_jockey` on(`race`.`race_id` = `race_jockey`.`race_id`)) join `horse` on(`horse_race`.`horse_id` = `horse`.`horse_id`)) join `jockey` on(`race_jockey`.`jockey_id` = `jockey`.`jockey_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -421,7 +403,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bets`
 --
 ALTER TABLE `bets`
-  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
 
 --
 -- AUTO_INCREMENT for table `horse`
