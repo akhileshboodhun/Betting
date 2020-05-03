@@ -30,8 +30,9 @@
       Your browser does not support HTML5 video.
     </video>
   </div>
-  <div  class="container " class="col-md-12">
-    <h1 class="jumbotron;background:inherit;">Quick Bet</h1>
+  <div class="container " class="col-md-12">
+    <br>
+    <h1 class="text-light"  class="jumbotron;background:inherit;">Quick Bet</h1>
     <p>
       <?php
       include('../../global/serverconnectionafterlogin.php');
