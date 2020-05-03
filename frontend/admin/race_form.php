@@ -21,8 +21,8 @@
                                 </div>
                                 <div class="field_wrapper">
                                         <div class="form-group">
-                                            <label class="col-sm-12">Horse</label>
-                                            <div class="col-sm-12">
+                                            <label class="col-sm-12">Horse + Jockey</label>
+                                            <div class="col-sm-6">
                                                 <select name="select_horses[]"  class="resetfield form-control form-control-line">
                                                 <option value="">Select Horse</option>
                                                     <?php  
@@ -30,6 +30,17 @@
                                                         $list->execute();
                                                         while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
                                                             echo "<option value=\"" . $row_list['horse_id'] ."\">"  . $row_list['horse_name'] . "</option>" ;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <select name="select_jockeys[]"  class="resetfield form-control form-control-line">
+                                                <option value="">Select Jockey</option>
+                                                    <?php  
+                                                        $list = $conn->prepare("select * from jockey order by jockey_id asc");
+                                                        $list->execute();
+                                                        while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
+                                                            echo "<option value=\"" . $row_list['jockey_id'] ."\">"  . $row_list['jockey_name'] . "</option>" ;
                                                     ?>
                                                 </select>
                                             </div>
