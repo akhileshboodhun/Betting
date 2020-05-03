@@ -32,7 +32,7 @@ if ($stmt = $conn->prepare($s_update){
 }
 
 //deleted inconsistent table 'horse_race'
-$s_delete = "DELETE FROM horse_race WHERE race_id = :raceid";
+$s_delete = "DELETE FROM horse_race WHERE race_id = :raceid;";
 if ($stmt = $conn->prepare($s_delete){
     $stmt->bindParam(':raceid', $race_id);
     $stmt->execute();
@@ -45,7 +45,7 @@ if ($stmt = $conn->prepare($s_delete){
 //replaced second table 'horse_race' with a new updated one
 
 foreach($select_horse_array as $s_horse){
-    if ($stmt = $conn->prepare('INSERT INTO horse_race (race_id, horse_id) VALUES(:raceid, :horseid)')){
+    if ($stmt = $conn->prepare('INSERT INTO horse_race (race_id, horse_id) VALUES(:raceid, :horseid);')){
         $stmt->bindParam(':raceid', $race_id);
         $stmt->bindParam(':horseid', $s_horse);
         $stmt->execute();
