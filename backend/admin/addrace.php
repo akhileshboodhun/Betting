@@ -39,13 +39,11 @@ $horse_array_size = count($select_horse_array);
         }
     }*/
 
-
     for($i=0; $i<$horse_array_size;$i++){
-        if ($stmt = $conn->prepare('INSERT INTO race_horse_jockey (race_id, horse_id, jockey_id, odds) VALUES(:raceid, :horseid, :jockeyid, :odd)')){
+        if ($stmt = $conn->prepare('INSERT INTO race_horse_jockey (race_id, horse_id, jockey_id) VALUES(:raceid, :horseid, :jockeyid)')){
             $stmt->bindParam(':raceid', $raceid);
-            $stmt->bindParam(':horseid', $select_horse_array[i]);
-            $stmt->bindParam(':jockeyid', $select_jockey_array[i]);
-            $stmt->bindParam(':odd', $testodd);
+            $stmt->bindParam(':horseid', $select_horse_array[$i]);
+            $stmt->bindParam(':jockeyid', $select_jockey_array[$i]);
             $stmt->execute();
             echo 'Success2';
         // echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
