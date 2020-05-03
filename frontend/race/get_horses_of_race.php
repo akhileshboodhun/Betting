@@ -28,7 +28,7 @@ include ('../../global/serverconnectionafterlogin.php');
                                                 <form action=\"../../backend/race/addbet.php\" method=\"POST\">
                                                     <td>" . $rs['horse_id'] . "</td>
                                                     <td>" . $rs['horse_name'] . "</td>
-                                                    <td>" . $rs['horse_dob'] . "</td>
+                                                    <td>" . $rs['jockey_name'] . "</td>
                                                     <td>" . $rs['stable_name'] . "</td>
                                                     <td>" . $rs['odds'] . "</td>";
                                                     include('calculate_odds.php');

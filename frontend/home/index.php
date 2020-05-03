@@ -48,7 +48,7 @@
                     <th></th>
                     </tr>';
         $id = $race['race_id'];
-        $horsedetails = "SELECT * from horse,horse_race where horse.horse_id=horse_race.horse_id and horse_race.race_id='$id' ";
+        $horsedetails = "SELECT * from horse h, race_horse_jockey j where h.horse_id=j.horse_id and j.race_id='$id' ";
         $selection = $conn->prepare($horsedetails);
         $selection->execute();
         $horses = $selection->fetchAll();
