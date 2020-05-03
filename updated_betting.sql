@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 11:12 PM
+-- Generation Time: May 03, 2020 at 11:25 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -274,6 +274,21 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `vw_all_horses_admin`
+-- (See below for the actual view)
+--
+CREATE TABLE `vw_all_horses_admin` (
+`horse_id` int(11)
+,`horse_name` varchar(15)
+,`horse_dob` date
+,`horse_weight` double
+,`stable_name` varchar(75)
+,`owner_name` varchar(75)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `vw_specific_race_info`
 -- (See below for the actual view)
 --
@@ -295,6 +310,15 @@ CREATE TABLE `vw_specific_race_info` (
 DROP TABLE IF EXISTS `racedetails`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `racedetails`  AS  select `race_jockey`.`jockey_id` AS `jockey_id`,`horse_race`.`horse_id` AS `horse_id`,`race`.`race_id` AS `race_id`,`race`.`race_name` AS `race_name`,`race`.`date_time` AS `date_time`,`race`.`distance` AS `distance`,`race`.`no_horses` AS `no_horses`,`horse`.`horse_name` AS `horse_name`,`horse`.`horse_dob` AS `horse_dob`,`horse`.`horse_weight` AS `horse_weight`,`horse`.`stable_id` AS `stable_id`,`jockey`.`jockey_name` AS `jockey_name`,`jockey`.`jockey_dob` AS `jockey_dob`,`jockey`.`jockey_weight` AS `jockey_weight` from ((((`race` join `horse_race` on(`race`.`race_id` = `horse_race`.`race_id`)) join `race_jockey` on(`race`.`race_id` = `race_jockey`.`race_id`)) join `horse` on(`horse_race`.`horse_id` = `horse`.`horse_id`)) join `jockey` on(`race_jockey`.`jockey_id` = `jockey`.`jockey_id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `vw_all_horses_admin`
+--
+DROP TABLE IF EXISTS `vw_all_horses_admin`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_all_horses_admin`  AS  select `h`.`horse_id` AS `horse_id`,`h`.`horse_name` AS `horse_name`,`h`.`horse_dob` AS `horse_dob`,`h`.`horse_weight` AS `horse_weight`,`s`.`stable_name` AS `stable_name`,`o`.`owner_name` AS `owner_name` from (((`horse` `h` join `horse_owner` `w`) join `owner` `o`) join `stable` `s`) where `h`.`horse_id` = `w`.`horse_id` and `h`.`stable_id` = `s`.`stable_id` and `w`.`owner_id` = `o`.`owner_id` ;
 
 -- --------------------------------------------------------
 
@@ -397,7 +421,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bets`
 --
 ALTER TABLE `bets`
-  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
+  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
 
 --
 -- AUTO_INCREMENT for table `horse`
