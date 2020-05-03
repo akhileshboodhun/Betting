@@ -1,4 +1,4 @@
-<div id="modalRaceDetail" class="modal fade" role="dialog">
+<div id="modalRaceDetail<?php echo $raceid; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->

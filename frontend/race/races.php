@@ -45,7 +45,7 @@ include('../../global/serverconnectionafterlogin.php');
                             $racename=$rs['race_name'];
                             $racedate=$rs['date_time'];
                             include('race_cards.php');
-                           include('race_modals.php');
+                            include('race_modals.php');
                          }
 
 
