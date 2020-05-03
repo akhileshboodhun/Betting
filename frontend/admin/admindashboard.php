@@ -286,6 +286,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../js/custom.min.js"></script>
     <script src="../../js/dashboard1.js"></script>
+    <script src="../../js/new_chart.js"></script>
     <script src="../../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
     <!--<script src="../../js/add_universal_form.js"></script>-->
     <script src="../../js/number_spinner.js"></script>
