@@ -14,8 +14,8 @@ include('../../global/serverconnectionafterlogin.php');
         echo 'Could not prepare statement!';
     }
 
-    //update inconsistent table 'horse_race' for current horse
-$s_update = "   UPDATE horse_race
+    //update inconsistent table 'race_horse_jockey' for current horse
+$s_update = "   UPDATE race_horse_jockey
                 SET odds = :newodds
                 WHERE race_id = :raceid
                 AND   horse_id = :horseid
@@ -32,8 +32,8 @@ if ($stmt = $conn->prepare($s_update)){
     echo 'Could not prepare statement2!';
 }
 
-//update inconsistent table 'horse_race' for other horses
-$s_update = "   UPDATE horse_race
+//update inconsistent table 'race_horse_jockey' for other horses
+$s_update = "   UPDATE race_horse_jockey
                 SET odds = odds + :new_other_odds_inc
                 WHERE race_id = :raceid
                 AND   horse_id <> :horseid
