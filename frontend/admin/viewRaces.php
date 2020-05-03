@@ -52,23 +52,26 @@
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        $stmt = $conn->prepare('SELECT race_name, distance, no_horses
+                                        $stmt = $conn->prepare('SELECT race_id, race_name, distance, no_horses
                                                                 FROM race 
-                                                             ');
+                                                            ');
                                         $stmt->execute();
-                                        while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                            echo "<tr>
-                                                    <td>" . $row_stmt['race_name'] . "</td>
-                                                    <td>" . $row_stmt['distance'] . "</td>
-                                                    <td>" . $row_stmt['no_horses'] . "</td>
-                                                    <td><button class=\"btn\" data-toggle=\"modal\" data-target=\"#modalRaceDetail\">View Details</button> </td>
-                                                    <td><button class=\"btn\">edit</button> </td>
-                                                    <td><button class=\"btn\">del</button> </td>
-                                                   
-                                                    </tr>
-                                                    ";
-                                        }
-                                        ?>
+                                        $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($row_stmt as $rs){
+                                                $raceid= $rs['race_id'];
+                                                echo "<tr>
+                                                        <td>" . $rs['race_name'] . "</td>
+                                                        <td>" .$rs['distance'] . "</td>
+                                                        <td>" . $rs['no_horses'] . "</td>
+                                                        <td><button class=\"btn\" data-toggle=\"modal\" data-target=\"#modalRaceDetail$raceid\">View Details</button>";
+                                                        include('race_details_modal.php');
+                                                       echo "</td> <td><button class=\"btn\">edit</button> </td>
+                                                        <td><button class=\"btn\">del</button> </td>";
+        
+                                                        echo "</tr>";
+                                                ;
+                                            }
+                                     ?>
                                     </tbody>
                                 </table>
                                 <div class="add_race">ADD RACE
