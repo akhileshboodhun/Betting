@@ -10,16 +10,17 @@ include('../../global/serverconnectionafterlogin.php');
         //$stmt->bindParam(':ownerid', $_POST['owner_id']);
         $stmt->execute();
 
-        /*$stmt2 = $conn->prepare("SELECT horse_id FROM horse WHERE horse_name = :horsename ;");
+        $stmt2 = $conn->prepare("SELECT horse_id FROM horse WHERE horse_name = :horsename ;");
         $stmt2->bindParam(':horsename', $_POST['horse_name']);
         $stmt2->execute();
         $hid = $stmt2->fetch(PDO::FETCH_ASSOC);
-        $stmt3 = $conn->prepare("INSERT INTO horse_owner (horse_id, owner_id) VALUES (:$hid, :ownerid);");
-        $stmt3->bindParam(":$hid", $_POST['horse_id']);
+        $horseid = $hid['horse_id'];
+        $stmt3 = $conn->prepare("INSERT INTO horse_owner (horse_id, owner_id) VALUES (:horseid, :ownerid);");
+        $stmt3->bindParam(":horseid", $horseid);
         $stmt3->bindParam(':ownerid', $_POST['owner_id']);
-        $stmt3->execute();*/
+        $stmt3->execute();
 
-         echo 'Success '.$hid;                      
+         echo 'Success ';                      
         //echo "<script>location.href = 'http://localhost/betting/frontend/admin/admindashboard.php';</script>";
     } else {
         // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
