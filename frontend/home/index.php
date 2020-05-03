@@ -15,23 +15,6 @@
     }
   </style>
   <<link rel="stylesheet" href="../../css/overlayvideo.css">
-    <style>
-      .x {
-        position: absolute;
-        z-index: 83;
-        top: 250px;
-
-        color: white;
-        font: url("../../css/Mukta.css");
-
-        font-size: 25px;
-        background-color: black;
-        opacity: 0.6;
-        margin: 0% 10% 0% 10%;
-      }
-    </style>
-
-
 </head>
 
 <body>
@@ -60,8 +43,8 @@
         echo '<h3  class="text-light">' . $race['race_name'] . '</h3>                    
                     <table class="table">
                     <tr>
-                    <th class="text-light">Topic title</th>
-                    <th class="text-light">Category</th>
+                    <th class="text-light">Horsename</th>
+                    <th class="text-light">Weight</th>
                     <th></th>
                     </tr>';
         $id = $race['race_id'];
