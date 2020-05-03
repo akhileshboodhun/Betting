@@ -17,14 +17,14 @@ include ('../../global/serverconnectionafterlogin.php');
                                         $stmt->execute();
                                         while ($row_stmt = $stmt->fetch(PDO::FETCH_ASSOC)){
                                             echo "<tr>
-                                                    <td>" . $row_stmt['horse_id'] . "</td>
-                                                    <td>" . $row_stmt['horse_name'] . "</td>
-                                                    <td>" . $row_stmt['horse_dob'] . "</td>
-                                                    <td>" . $row_stmt['stable_name'] . "</td>
-                                                    <td>" . $row_stmt['odds'] . "</td>
-                                                    <td><button type=\"submit\" class=\"btn\">BET</button> </td>
-                                                    </tr>
-                                                    ";
+                                            <td>" . $row_stmt['horse_id'] . "</td>
+                                            <td>" . $row_stmt['horse_name'] . "</td>
+                                            <td>" . $row_stmt['jockey_name'] . "</td>
+                                            <td>" . $row_stmt['stable_name'] . "</td>
+                                            <td>" . $row_stmt['odds'] . "</td>
+                                            <td><button type=\"submit\" class=\"btn\">BET</button> </td>
+                                            </tr>
+                                            ";
                                         }
                                         ?>
                     </tbody>
