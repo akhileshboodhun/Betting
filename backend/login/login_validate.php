@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if(password_verify($login_password,$hashed_password)){
             session_start();
               $_SESSION['user_name'] = $userResults['user_name'] ;
+              $_SESSION['user_id'] = $userResults['user_id'] ;
               $temp_user_id = $userResults['user_id'];
               $s2query = "SELECT is_admin FROM admin WHERE user_id= $temp_user_id";
               $Result2 = $conn->query($s2query) ;

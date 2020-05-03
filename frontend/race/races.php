@@ -18,7 +18,7 @@
 <?php
 $activemenu="races";
 include('../../global/menu.php'); 
-include ('../../global/serverconnectionafterlogin.php');
+include('../../global/serverconnectionafterlogin.php');
 ?>
 
     <div class="jumbotron">
@@ -55,5 +55,7 @@ include ('../../global/serverconnectionafterlogin.php');
                 </div>
             </div>
          
-
+<script src="../../js/jquery.bootstrap-touchspin.js"></script>
+<script src="../../js/touchspin_apply.js"></script>
+<script src="../../js/add_universal_form.js"></script>
 </body>

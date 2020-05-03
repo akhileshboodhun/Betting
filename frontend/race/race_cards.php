@@ -5,7 +5,7 @@
             <div class="card-block">
                 <h4 class="card-title"><?php echo $racename; ?></h4>
                 <a class="card-text">Date: <?php echo $racedate; ?></a>
-                <button class="btn btn-primary modal-trigger float-right" data-toggle="modal" data-target="#modal<?php echo $raceid;?>">Place Bet</button>
+                <button class=" bet-button btn btn-primary modal-trigger float-right" data-toggle="modal" data-target="#modal<?php echo $raceid;?>">Place Bet</button>
             </div>
         </div>
 </div>
