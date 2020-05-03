@@ -3,7 +3,7 @@ $(document).ready(function(){
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
     var fieldHTML="";
-    var field2 = "<div class=\"form-group\"><label class=\"col-sm-12\">Horse";
+    var field2 = "<div class=\"form-group\"><label class=\"col-sm-12\">Horse + Jockey";
 
     var xhr= new XMLHttpRequest();
     xhr.open('GET', 'http://localhost/betting/frontend/admin/select_horses.php', true);
