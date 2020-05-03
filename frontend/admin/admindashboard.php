@@ -59,10 +59,10 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                        <div class="add_race">
-                        <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal1"></a>
-                        <?php include('add_race_modal.php'); ?>
-                        </div>
+                            <div class="add_race">
+                                <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal1"></a>
+                                <?php include('add_race_modal.php'); ?>
+                            </div>
                             <h3 class="box-title">Total Races</h3>
                             <ul class="list-inline two-part">
                                 <li>
@@ -75,8 +75,8 @@
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
                         <div class="add_horse">
-                        <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal2"></a>
-                       <?php include('add_horse_modal.php'); ?>
+                            <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modal2"></a>
+                            <?php include('add_horse_modal.php'); ?>
                         </div>
                             <h3 class="box-title">Total Horses</h3>
                             <ul class="list-inline two-part">
@@ -89,8 +89,10 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                        <div class="add_result"><a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modalAddResult"></a>
-                        <?php include('add_result_modal.php'); ?></div>
+                        <div class="add_result">
+                            <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modalAddResult"></a>
+                            <?php include('add_result_modal.php'); ?>
+                        </div>
                             <h3 class="box-title">Results</h3>
                             <ul class="list-inline two-part">
                                 <li>
@@ -138,8 +140,10 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                        <div class="add_stable"><a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modalAddStable"></a>
-                        <?php include('add_stable_modal.php'); ?></div>
+                        <div class="add_stable">
+                            <a href="#" class="modal-trigger fa fa-plus-square" data-toggle="modal" data-target="#modalAddStable"></a>
+                            <?php include('add_stable_modal.php'); ?>
+                        </div>
                             <h3 class="box-title">Stables</h3>
                             <ul class="list-inline two-part">
                                 <li>

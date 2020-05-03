@@ -11,8 +11,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                    <input type="submit" class="stable-add-btn btn btn-success" value="Add New Stable">
-                                    </div>
+                                    <input type="submit" class="stable-add-btn btn btn-success" value="Add New Stable"> </div>
+                                </div>
                             </form>
                         </div>
                     </div>
