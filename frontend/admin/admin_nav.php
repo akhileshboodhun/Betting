@@ -66,6 +66,9 @@
                     <li>
                         <a href="viewRaces.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>View All Races</a>
                     </li>
+                    <li>
+                        <a href="../../global/logout.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</a>
+                    </li>
 
                 </ul>
             </div>
