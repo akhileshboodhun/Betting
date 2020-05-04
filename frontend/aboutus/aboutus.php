@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php
-    $activemenu = "home";
+    $activemenu = "aboutus";
     include('../../global/menu.php');
     ?>
     <div class="container">
