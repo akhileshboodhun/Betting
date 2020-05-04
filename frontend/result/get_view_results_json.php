@@ -5,3 +5,4 @@
     $stmt->execute();
     $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
    echo json_encode($row_stmt);
+   ?>

@@ -55,5 +55,5 @@
 
             <script src="../../js/jquery.bootstrap-touchspin.js"></script>
             <script src="../../js/touchspin_apply.js"></script>
-           <!-- <script src="../../js/add_universal_form.js"></script> -->
+           <script src="../../js/add_universal_form.js"></script>
 </body>

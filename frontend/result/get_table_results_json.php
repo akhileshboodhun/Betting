@@ -20,7 +20,7 @@
                                         foreach($row_stmt_json as $rs){
                                             echo "
                                             <tr>
-                                                <form action=\"../../backend/race/addbet.php\" method=\"POST\">
+                                               
                                                     <td>#" . $rs['rank'] . "</td>
                                                     <td>" . $rs['horse_id'] . "</td>
                                                     <td>" . $rs['horse_name'] . "</td>
@@ -28,7 +28,7 @@
                                                     <td>" . $rs['stable_name'] . "</td>
                                                     <td>" . $rs['odds'] . "</td>
                                                     
-                                                </form>
+                      
 
                                             </tr>
                                                     ";

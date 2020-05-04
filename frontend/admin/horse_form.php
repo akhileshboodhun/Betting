@@ -7,22 +7,22 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Kishan" name="horse_name"  class="resetfield form-control form-control-line"> </div>
+                                        <input type="text" required placeholder="Kishan" name="horse_name"  class="resetfield form-control form-control-line" data-vindicate="required|format:alpha"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Date of Birth</label>
                                     <div class="col-md-12">
-                                    <input type="date" name="horse_dob" class="resetfield" placeholder="Date Of Birth" ></div>
+                                    <input type="date" required name="horse_dob" class="resetfield" placeholder="Date Of Birth" ></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Horse Weight</label>
                                     <div class="col-md-12">
-                                        <input type="number" min="200" max="1000" step="1" placeholder="500" name="horse_weight"  class="resetfield form-control form-control-line"> </div>
+                                        <input type="number" required min="200" max="1000" step="1" placeholder="500" name="horse_weight"  class="resetfield form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-12">Stable </label>
                                     <div class="col-sm-12">
-                                        <select  name="stable_id"  class="resetfield form-control form-control-line">
+                                        <select  name="stable_id" required data-pristine-min-message="Select at least 2"  class="resetfield form-control form-control-line">
                                         <option value="">Select Stable</option>
                                         <?php  
                                             $list = $conn->prepare("select * from stable order by stable_id asc");
@@ -36,7 +36,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-12">Owner </label>
                                     <div class="col-sm-12">
-                                        <select  name="owner_id"  class="resetfield form-control form-control-line">
+                                        <select  name="owner_id" required  class="resetfield form-control form-control-line">
                                         <option value="">Select Owner</option>
                                         <?php  
                                             $list = $conn->prepare("select * from owner order by owner_name asc");
@@ -55,4 +55,5 @@
                             </form>
                         </div>
                     </div>
+                    
  </div>
