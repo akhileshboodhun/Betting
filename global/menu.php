@@ -51,16 +51,22 @@
       echo "active";
     ?>">
         <?php
-        if (isset($_SESSION['user_name'])) {
+        if (isset($_SESSION['user_name'])&& !isset($_SESSION['is_admin'])) {
           include('serverconnectionafterlogin.php');
           $username = $_SESSION['user_name'] ;
-          $stmt = $conn->prepare("SELECT n.balance AS balance FROM normal_user n JOIN user u WHERE n.user_id = u.user_id AND u.user_name = '$username' ");
+          $stmt = $conn->prepare("SELECT balance AS balance FROM normal_user, user  WHERE normal_user.user_id = user.user_id AND user.user_name = '$username' ");
           //$stmt->bindParam(':username', $username );
           var_dump($stmt);
           $stmt->execute();
-          $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          $balance = $row_stmt['balance'];
-          echo "BALANCE : " .$balance;
+          $users = $stmt->fetchAll();
+        //  $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($users as $user) {
+            
+          }
+          $balance = $user['balance'];
+          echo "BALANCE : " . $balance;
+         
+          //echo "BALANCE : " .$balance;
         } else {
           echo "";
         }
