@@ -3,7 +3,7 @@
                     
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material result-add-form" action="../../backend/admin/addrace.php"  method="POST">
+                            <form class="form-horizontal form-material result-add-form" action="../../backend/result/payout.php"  method="POST">
                                 <div class="form-group">
                                     <label class="col-sm-12">SELECT RACE TO SET RESULT </label>
                                     <div class="col-sm-12">
