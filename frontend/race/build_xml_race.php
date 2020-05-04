@@ -78,8 +78,9 @@
 	// Enable user error handling
 	libxml_use_internal_errors(true);
 	//We convert the XML into a DOMDocument object for schema validation purposes
-	$doc = new DOMDocument("1.0");
-	$doc->loadXML($dom->asXML()); 
+	/*$doc = new DOMDocument("1.0");
+	$doc->loadXML($dom->asXML()); */
+	$doc = $dom;
 	if (!$doc->schemaValidate('build_xml_race.xsd')) {
    		 print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
     	libxml_display_errors();
