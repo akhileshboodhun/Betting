@@ -20,11 +20,8 @@ $horse_array_size = count($select_horse_array);
     $list->execute();
     $rs= $list->fetch(PDO::FETCH_ASSOC);
     $raceid = $rs['race_id'];
-    //echo $raceid;
     
-
-    $testjockeyid=796;
-    $testodd=200;
+    
    /* foreach($select_horse_array as $s_horse){
         if ($stmt = $conn->prepare('INSERT INTO race_horse_jockey (race_id, horse_id, jockey_id, odd) VALUES(:raceid, :horseid, :jockeyid, :odd)')){
             $stmt->bindParam(':raceid', $raceid);

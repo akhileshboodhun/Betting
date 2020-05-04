@@ -49,15 +49,16 @@
                     <th></th>
                     </tr>';
         $id = $race['race_id'];
-        $horsedetails = "SELECT * from horse h, race_horse_jockey j where h.horse_id=j.horse_id and j.race_id='$id' ";
-        $selection = $conn->prepare($horsedetails);
-        $selection->execute();
-        $horses = $selection->fetchAll();
-        foreach ($horses as $horse) {
+        $stmt2 = $conn->prepare("SELECT * from vw_homepage_show_racesdetailed where race_id = $id");
+        $stmt2->execute();
+        $rs = $stmt2->fetchAll();
+        foreach ($rs as $dispinfo) {
 
           echo '<tr>';
-          echo '<td class="text-light" >' . $horse['horse_name'] . '</td>';
-          echo '<td class="text-light" >' . $horse['horse_weight'] . '</td>';
+          echo "<td class=\"text-light\" >" . $dispinfo['horse_name'] . "</td>";
+          echo "<td class=\"text-light\" >" . $dispinfo['horse_weight'] . "</td>";
+          echo "<td class=\"text-light\" >" . $dispinfo['jockey_name'] . "</td>";
+          echo "<td class=\"text-light\" >" . $dispinfo['stable_name'] . "</td>";
           echo '</tr>';
         }
         echo '</table>';
