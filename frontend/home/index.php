@@ -44,8 +44,10 @@
         echo '<h3  class="text-light">' . $race['race_name'] . '</h3>                    
                     <table class="table">
                     <tr>
-                    <th class="text-light">Horsename</th>
+                    <th class="text-light">Horse</th>
                     <th class="text-light">Weight</th>
+                    <th class="text-light">Jockey</th>
+                    <th class="text-light">Stable</th>
                     <th></th>
                     </tr>';
         $id = $race['race_id'];

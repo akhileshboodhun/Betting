@@ -35,7 +35,7 @@
             <div class="container mt-2">
                 <div class="row">
                     <?php
-                    $stmt = $conn->prepare("SELECT * FROM race");
+                    $stmt = $conn->prepare("SELECT * FROM race WHERE race_id NOT IN (SELECT race_id FROM vw_results);");
                     $stmt->execute();
                     $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($row_stmt as $rs) {
@@ -55,5 +55,5 @@
 
             <script src="../../js/jquery.bootstrap-touchspin.js"></script>
             <script src="../../js/touchspin_apply.js"></script>
-          <script src="../../js/add_universal_form.js"></script>
+           <script src="../../js/add_universal_form.js"></script>
 </body>
