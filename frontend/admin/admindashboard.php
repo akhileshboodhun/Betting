@@ -304,6 +304,7 @@ include('../../global/serverconnectionafterlogin.php'); ?>
 <script src="../../js/dynamic_textfields.js"></script>
 <!--<script src="../../js/pristine.js"></script>-->
 <!--<script src="../../js/pristine-apply.js"></script>-->
+<script src="../../js/result_dynamic_add.js"></script>
 </body>
 
 </html>

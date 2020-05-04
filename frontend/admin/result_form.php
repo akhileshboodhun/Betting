@@ -4,10 +4,10 @@
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
                             <form class="form-horizontal form-material result-add-form" action="../../backend/result/payout.php"  method="POST">
-                                <div class="form-group">
+                                <div class="form-group" id="select_race">
                                     <label class="col-sm-12">SELECT RACE TO SET RESULT </label>
                                     <div class="col-sm-12">
-                                        <select  name="race_id" class="resetfield form-control form-control-line select_race">
+                                        <select  name="race_id"  class="resetfield form-control form-control-line ">
                                                 <option value="">Select Race</option>
                                                 <?php  
                                                         $list = $conn->prepare("SELECT DISTINCT race_id, race_name FROM vw_create_result");
