@@ -1,2 +1,16 @@
 email: akhilesh@example.com
 pass: qwerty12345
+
+
+CREATE VIEW vw_bets_race AS
+SELECT b.bet_id, b.race_id, b.horse_id, b.userid, b.bet_amount, b.PayoutFlag, r.jockey_id, r.odds FROM bets b JOIN race_horse_jockey r ON b.race_id = r.race_id AND b.horse_id = r.horse_id;
+
+
+
+
+
+
+CREATE VIEW vw_bets_race_rank AS
+SELECT b.bet_id, b.race_id, b.horse_id, b.userid, b.bet_amount, b.PayoutFlag, r.jockey_id, r.odds, rs.rank FROM (bets b JOIN race_horse_jockey r ON b.race_id = r.race_id AND b.horse_id = r.horse_id) JOIN results rs ON r.race_id = rs.race_id AND r.horse_id = rs.horse_id;
+
+

@@ -19,9 +19,9 @@ if ($stmt->num_rows > 0) {
 		// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
 		session_regenerate_id();
 		$_SESSION['loggedin'] = TRUE;
-		$_SESSION['username'] = $username;
-		$_SESSION['id'] = $id;
-		echo 'Welcome ' . $_SESSION['username'] . '!';
+		$_SESSION['user_name'] = $username;
+		$_SESSION['user_id'] = $id;
+		echo 'Welcome ' . $_SESSION['user_name'] . '!';
 	} else {
 		echo 'Incorrect password!';
 	}

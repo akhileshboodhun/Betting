@@ -72,6 +72,7 @@ if (isset($_POST['reg_email'], $_POST['reg_pass'])) {
       $stmt2->execute();
       var_dump( $stmt2);
         $_SESSION['user_name']= $_POST['reg_username'];
+        $_SESSION['user_id']= $userid;
         echo 'You have successfully registered, you can now login!';
         header("Location: ../../index.php");
     } else {

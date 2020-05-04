@@ -22,7 +22,7 @@
 
 
     <li class="nav-item">
-      <a href="../result/results.php" class="nav-link disabled
+      <a href="../result/results.php" class="nav-link 
     <?php
     if ($activemenu == "results")
       echo "active";
