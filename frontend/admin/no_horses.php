@@ -1,5 +1,5 @@
 <?php 
-    $raceid = $row_list['race_id'];
+    $raceid = $_GET['race_id'];
 
     $list = $conn->prepare("SELECT no_horses FROM race  WHERE race_id = $raceid");
     $list->execute();
