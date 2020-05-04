@@ -3,10 +3,10 @@ $(document).ready(function(){
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
     var fieldHTML="";
-    var field2 = "<div class=\"form-group\"><label class=\"col-sm-12\">Horse + Jockey";
+    var field2 = "<div class=\"form-group\"><label class=\"col-sm-12\">Select Participant";
 
     var xhr= new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost/betting/frontend/admin/select_horses.php', true);
+    xhr.open('GET', 'http://localhost/betting/frontend/admin/select_horses2.php', true);
     xhr.onreadystatechange= function() {
         if (this.readyState!==4) return;
         if (this.status!==200) return; // or whatever error handling you want
@@ -47,7 +47,7 @@ xhr.send();
         var h_size = 3;
         $(result_wrapper).empty();
         for(i=0;i<h_size;i++){
-        $(result_wrapper).append($(field2  + fieldHTML));
+        $(result_wrapper).append($(field2  + (i+1) + fieldHTML));
         }
         
 
