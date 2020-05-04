@@ -40,39 +40,7 @@
         About Us</a>
     </li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link <?php if (isset($_SESSION['user_name'])) {
-                  echo "modal-trigger fa fa-plus-square\" data-toggle=\"modal\" data-target=\"#modalBalance$userid";
-                } else {
-                  echo "";
-                } ?>" class="nav-link bg-success
-    <?php
-    if ($activemenu == "login")
-      echo "active";
-    ?>">
-        <?php
-        if (isset($_SESSION['user_name'])&& !isset($_SESSION['is_admin'])) {
-          include('serverconnectionafterlogin.php');
-          $username = $_SESSION['user_name'] ;
-          $stmt = $conn->prepare("SELECT balance AS balance FROM normal_user, user  WHERE normal_user.user_id = user.user_id AND user.user_name = '$username' ");
-          //$stmt->bindParam(':username', $username );
-          var_dump($stmt);
-          $stmt->execute();
-          $users = $stmt->fetchAll();
-        //  $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($users as $user) {
-            
-          }
-          $balance = $user['balance'];
-          echo "BALANCE : " . $balance;
-         
-          //echo "BALANCE : " .$balance;
-        } else {
-          echo "";
-        }
-         ?> </a>
-
-    </li>
+    
 
 
 
