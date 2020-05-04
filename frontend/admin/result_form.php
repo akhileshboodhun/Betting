@@ -14,11 +14,12 @@
                                                         $list->execute();
                                                         while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
                                                         echo "<option value=\"" . $row_list['race_id'] ."\">"  . $row_list['race_name'] . "</option>" ;
+                                                        
                                                 ?>
                                         </select>
                                     </div>
                                 </div>
-
+                                 
                                 <div class="result_wrapper">
                                         <div class="form-group">
                                         <label class="col-sm-12">RANK#</label>

@@ -39,6 +39,39 @@
     ?>">
         About Us</a>
     </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link <?php if (isset($_SESSION['user_name'])) {
+                  echo "modal-trigger fa fa-plus-square\" data-toggle=\"modal\" data-target=\"#modalBalance$userid";
+                } else {
+                  echo "";
+                } ?>" class="nav-link bg-success
+    <?php
+    if ($activemenu == "login")
+      echo "active";
+    ?>">
+        <?php
+        if (isset($_SESSION['user_name'])) {
+          include('serverconnectionafterlogin.php');
+          $username = $_SESSION['user_name'] ;
+          $stmt = $conn->prepare("SELECT n.balance AS balance FROM normal_user n JOIN user u WHERE n.user_id = u.user_id AND u.user_name = '$username' ");
+          //$stmt->bindParam(':username', $username );
+          var_dump($stmt);
+          $stmt->execute();
+          $row_stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          $balance = $row_stmt['balance'];
+          echo "BALANCE : " .$balance;
+        } else {
+          echo "";
+        }
+         ?> </a>
+
+    </li>
+
+
+
+
+
     <?php
     if (isset($_SESSION['is_admin']))
       include('amenu.php');
@@ -51,6 +84,8 @@
         ?></a>
     </li>
 
+    
+    
     <li class="nav-item">
       <a href="<?php if (isset($_SESSION['user_name'])) {
                   echo "../../global/logout.php";

@@ -1,0 +1,12 @@
+USER SIDE
+As a user when we visit the site we get an informative table of all the races and the participants(horses + jockeys) in it.
+We now can proceed to register as a user...
+After Registering as a user we can go to races.php and view races available to bet
+we can also see results and the rank of the horses.
+proceed to bet ......
+
+
+
+
+
+ADMIN SIDE
