@@ -10,7 +10,7 @@
                                         <select  name="race_id" class="resetfield form-control form-control-line select_race">
                                                 <option value="">Select Race</option>
                                                 <?php  
-                                                        $list = $conn->prepare("SELECT DISTINCT race_name FROM vw_create_result");
+                                                        $list = $conn->prepare("SELECT DISTINCT * FROM vw_create_result");
                                                         $list->execute();
                                                         while ($row_list = $list->fetch(PDO::FETCH_ASSOC))
                                                         echo "<option value=\"" . $row_list['race_id'] ."\">"  . $row_list['race_name'] . "</option>" ;

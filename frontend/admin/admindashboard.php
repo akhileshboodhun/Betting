@@ -115,13 +115,10 @@ include('../../global/serverconnectionafterlogin.php'); ?>
                             <div id="sparklinedash3"></div>
                         </li>
                         <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">
-                                <?php $query = "SELECT count(*) as count from results ";
+                                <?php  $query = "SELECT count(*) as count from results ";
                                 $selection = $conn->prepare($query);
                                 $selection->execute();
                                 $counts = $selection->fetchAll();
-                                foreach ($counts as $count) {
-                                }
-                                echo $count['count'];
                                 ?>
                             </span></li>
                     </ul>
@@ -212,15 +209,7 @@ include('../../global/serverconnectionafterlogin.php'); ?>
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="white-box">
-                    <h3 class="box-title">Products Yearly Sales</h3>
-                    <ul class="list-inline text-right">
-                        <li>
-                            <h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5>
-                        </li>
-                        <li>
-                            <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5>
-                        </li>
-                    </ul>
+                    <h3 class="box-title">Bets</h3>                  
                     <div id="ct-visits" style="height: 405px;"></div>
                 </div>
             </div>
