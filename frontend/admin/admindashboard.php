@@ -115,13 +115,10 @@ include('../../global/serverconnectionafterlogin.php'); ?>
                             <div id="sparklinedash3"></div>
                         </li>
                         <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">
-                                <?php $query = "SELECT count(*) as count from results ";
+                                <?php  $query = "SELECT count(*) as count from results ";
                                 $selection = $conn->prepare($query);
                                 $selection->execute();
                                 $counts = $selection->fetchAll();
-                                foreach ($counts as $count) {
-                                }
-                                echo $count['count'];
                                 ?>
                             </span></li>
                     </ul>
