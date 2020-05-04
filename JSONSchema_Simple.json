@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://api.example.com/owner.json#",
+    "type": "array",
+	"minItems": 1, 
+	"uniqueitems": true,
+	"items": {
+		"type": "object",	
+		"properties": {
+			"horse_id": {
+				"type": "integer"
+			  },
+			  "race_id": {
+				"type": "integer"
+			  },
+			  "horse_name": {
+				"type": "string"
+			  },
+			  "jockey_id": {
+				"type": "integer"
+			  },
+			  "jockey_name": {
+				"type": "string"
+			  },
+			  "stable_name": {
+				"type": "string"
+			  },
+			  "odds": {
+				"type": "number"
+			  },
+			  "rank": {
+				"type": "integer"
+			  }
+		},
+	    "required": [
+			"horse_id",
+			"race_id",
+			"horse_name",
+			"jockey_id",
+			"jockey_name",
+			"stable_name",
+			"odds",
+			"rank"
+		  ],
+		"additionalProperties": false
+	}, 	
+ 	"additionalProperties": false
+}
+
+
