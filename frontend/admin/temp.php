@@ -11,4 +11,12 @@ foreach ($users as $user) {
     echo $user['user_name'];
 
 
-    ?>
+     
+                                $query = "SELECT count(*) as count from race ";
+                                $selection = $conn->prepare($query);
+                                $selection->execute();
+                                $counts = $selection->fetchAll();
+                                foreach ($counts as $count) {
+                                }
+                                echo $count['count'];
+                                ?>
