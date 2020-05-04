@@ -1,5 +1,6 @@
 <?php 
-    $raceid = $_GET['race_id'];
+    include('../../global/serverconnectionafterlogin.php');
+    $raceid = $_GET['raceid'];
 
     $list = $conn->prepare("SELECT no_horses FROM race  WHERE race_id = $raceid");
     $list->execute();
