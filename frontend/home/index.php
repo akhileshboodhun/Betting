@@ -2,7 +2,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quick Bet Home</title>
+  <title>QuickBet Home</title>
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/style1.css">
   <script src="../../js/jquery-3.4.1.js"></script>
